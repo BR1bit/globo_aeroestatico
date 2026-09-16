@@ -22,21 +22,78 @@ de la canasta. Construido procedimentalmente en Blender 5.2.
 
 Capacidad real: 1 persona cómoda con los dos tanques, o 2–3 personas.
 
-**Presupuesto:** 161 objetos · **33.750 triángulos** · 25 texturas (19,2 MB) · 19 materiales
-· GLB de **21 MB**.
+**Presupuesto:** 161 objetos · **33.750 triángulos** · 34.086 vértices · 19 materiales
+· 25 texturas (19,2 MB)
+
+Todo malla poligonal: **cero n-gons**, cero geometría oculta, cero objetos vacíos de
+relleno. El modelo está en el origen, con escala 1,0 aplicada y rotación en cero.
 
 ---
 
-## 2. Checklist de importación a Unity
+## 2. Formatos incluidos
+
+| Archivo | Tamaño | Para qué |
+|---|---|---|
+| `globo_aerostatico.glb` | 21 MB | **Unity / Unreal / web.** Texturas embebidas, PBR completo, listo para importar |
+| `globo_aerostatico.fbx` | 2,5 MB | Maya, 3ds Max, Cinema 4D. Texturas por ruta relativa a `texturas/` |
+| `globo_aerostatico.obj` + `.mtl` | 2,9 MB | Intercambio genérico. Texturas por ruta relativa a `texturas/` |
+| `globo_aerostatico.blend` | 440 KB | Fuente editable (Blender 5.2), con los materiales nodales completos |
+
+Los tres exports salen de la misma escena y coinciden objeto por objeto: 161 mallas,
+33.750 triángulos. FBX y OBJ **no duplican** las texturas — las referencian en
+`texturas/`, así que esa carpeta tiene que viajar al lado del modelo.
+
+Orientación: **Y arriba, −Z al frente**, unidades en metros, en los tres formatos.
+
+---
+
+## 3. Nomenclatura y jerarquía
+
+Todo cuelga de un único empty raíz, agrupado por subsistema:
+
+```
+HotAirBalloon_Root
+├── GRP_Envelope   (3)   Envelope_Fabric, Envelope_CrownRing, Envelope_CrownValve
+├── GRP_Rigging   (80)   Rigging_TapePatch_01..20, Rigging_TapeStrap_01..20,
+│                        Rigging_Ring_01..20, Rigging_Cable_01..20
+├── GRP_Burner    (16)   Burner_Coil_L/R, Burner_Nozzle_L/R, Burner_FrameSide_01..04,
+│                        Burner_FrameDiag_01..02, Burner_GimbalRing,
+│                        Burner_Shackle_01..04, Burner_Flame
+├── GRP_Basket    (40)   Basket_Weave, Basket_Floor, Basket_RimTop, Basket_TrimBase,
+│                        Basket_CornerGuard_01..04, Basket_Upright_01..04,
+│                        Basket_UprightPad_01..04, Basket_PadBand_01..08,
+│                        Basket_Runner_01..02, Basket_RunnerStrap_01..06,
+│                        Basket_StepHole_01..08
+└── GRP_Tanks     (22)   Tank_Body_L/R, Tank_Foot, Tank_Collar, Tank_Valve, Tank_Outlet,
+                         Tank_Handwheel, Tank_HandwheelHub, Tank_Strap, Tank_Hose,
+                         Tank_HoseFitting_*_A/B
+```
+
+El nombre del objeto y el de su malla son **idénticos** — en Unity cada mesh asset
+entra con su nombre real, no como `Cylinder.003`.
+
+Materiales, todos con prefijo `M_`:
+
+```
+M_Envelope_Fabric      M_Envelope_Crown       M_Basket_Wicker      M_Basket_Floor
+M_Basket_StepHole      M_Leather_RimTop       M_Leather_RimBase    M_Leather_CornerGuard
+M_Leather_UprightPad   M_Leather_Plain        M_Metal_Stainless    M_Metal_HeatTempered
+M_Metal_Brass          M_Metal_Aluminium      M_Hose_Braid         M_Webbing_Strap
+M_Rope                 M_Valve_Red            M_Flame
+```
+
+---
+
+## 4. Checklist de importación a Unity
 
 ```
 [ ] 1. Package Manager -> Add package by name -> com.unity.cloud.gltfast
 [ ] 2. Arrastrar globo_aerostatico.glb a Assets/
 [ ] 3. Scale factor 1, sin rotación  (ya viene Y-up y en metros)
 [ ] 4. XR Origin en y = 0            (el piso de la canasta está ahí)
-[ ] 5. BalloonFabric -> Render Face: Both
-[ ] 6. Emisivo activado en BalloonFabric y FlameMat
-[ ] 7. Detail Normal + Detail Albedo en BalloonFabric, tiling 226 x 110  (ver 4.4)
+[ ] 5. M_Envelope_Fabric -> Render Face: Both
+[ ] 6. Emisivo activado en M_Envelope_Fabric y M_Flame
+[ ] 7. Detail Normal + Detail Albedo en M_Envelope_Fabric, tiling 226 x 110  (ver 6.4)
 [ ] 8. Compresión de texturas ASTC 6x6
 [ ] 9. Stereo Rendering: Single Pass Instanced
 [ ] 10. Box Colliders en piso y paredes (no Mesh Collider)
@@ -44,15 +101,17 @@ Capacidad real: 1 persona cómoda con los dos tanques, o 2–3 personas.
 
 ---
 
-## 3. Archivos
+## 5. Archivos
 
 ```
 globo_aerostatico/
-├── globo_aerostatico.glb      ← el que se importa a Unity (21 MB)
+├── globo_aerostatico.glb      ← Unity / Unreal / web (texturas embebidas)
+├── globo_aerostatico.fbx      ← Maya / 3ds Max / C4D
+├── globo_aerostatico.obj      ← intercambio genérico
+├── globo_aerostatico.mtl         (acompaña al .obj)
 ├── globo_aerostatico.blend    ← fuente editable
-├── texturas/                  ← los 25 PNG sueltos
-├── renders/                   ← estado actual, 9 ángulos
-└── proceso/                   ← renders viejos de las iteraciones
+├── texturas/                  ← los 25 PNG sueltos (los usan el .fbx y el .obj)
+└── renders/                   ← 9 ángulos del modelo actual
 ```
 
 ### Texturas
@@ -64,7 +123,7 @@ globo_aerostatico/
 | `borde_basecolor` / `borde_normal` | 4096×512 | Borde de cuero (tira) |
 | `zocalo_basecolor` / `zocalo_normal` | 2048×256 | Zócalo de cuero (tira) |
 | `tanque_basecolor` / `_roughness` / `_normal` | 1024² | Aluminio cepillado |
-| `tela_ripstop_normal` / `_detail_albedo` | 1024² | **Trama de la tela — va aparte, ver 4.4** |
+| `tela_ripstop_normal` / `_detail_albedo` | 1024² | **Trama de la tela — va aparte, ver 6.4** |
 | `tela_ripstop_height` | 1024² | Fuente del anterior (solo para Blender) |
 | `metal_inox_*` | 512² | Acero cepillado: marco, aro, grilletes |
 | `metal_calor_*` | 512² | Revenido: serpentinas y picos del quemador |
@@ -81,16 +140,16 @@ genérica rinde mucho más que hacerle un atlas a cada tubo.
 
 ---
 
-## 4. Los cuatro puntos críticos
+## 6. Los cuatro puntos críticos
 
-### 4.1 La tela tiene que ser doble cara
+### 6.1 La tela tiene que ser doble cara
 
-`Render Face: Both` en el material `BalloonFabric`.
+`Render Face: Both` en el material `M_Envelope_Fabric`.
 
 Si queda en `Front`, **desde adentro de la canasta vas a ver el cielo a través del
 globo**. El GLB ya trae `doubleSided: true`, pero conviene confirmarlo en Unity.
 
-### 4.2 Emisivo activado
+### 6.2 Emisivo activado
 
 - **Tela del globo**: emisivo al 22% del color del panel. Es lo que hace que los
   paneles se vean luminosos desde adentro, como en un globo real (el sol atraviesa
@@ -98,18 +157,18 @@ globo**. El GLB ya trae `doubleSided: true`, pero conviene confirmarlo en Unity.
 - **Llama**: usa `KHR_materials_emissive_strength` con valor 26. Con Bloom activado
   queda bien; sin Bloom se ve plana.
 
-### 4.3 Color space
+### 6.3 Color space
 
 Proyecto en **Linear** (es el default en URP). Coincide con Blender.
 
-### 4.4 La trama de la tela va como Detail Map (no viene en el GLB)
+### 6.4 La trama de la tela va como Detail Map (no viene en el GLB)
 
 El `globo_normal` del GLB trae el relieve **macro**: el abombado entre gajos, los
 pliegues y las costuras. La **trama del ripstop no puede viajar en el GLB** — glTF
 admite un solo normal map por material y la trama necesita repetirse cientos de
 veces.
 
-Se aplica a mano en el material `BalloonFabric`, en **Detail Inputs**:
+Se aplica a mano en el material `M_Envelope_Fabric`, en **Detail Inputs**:
 
 | Slot | Archivo | Tiling |
 |---|---|---|
@@ -128,24 +187,24 @@ overlay solo aporta los hilos sin alterar el color del panel.
 
 ---
 
-## 5. Cómo está armada la unión de los cables
+## 7. Cómo está armada la unión de los cables
 
 La cadena completa, de arriba hacia abajo:
 
 1. **Cinta de carga** pintada en la textura de la tela, sobre cada una de las 20
    costuras de gajo
-2. **Parche de cincha** (`TapePatch_*`) cosido a la tela con pespunte en **caja con
-   cruz** — el patrón estándar para cinchas que cargan peso
-3. **Cincha** (`TapeTab_*`) que baja 26 cm de la boca
-4. **Anillo de acero** (`TapeRing_*`) en su extremo
-5. **Cable** (`LoadCable_*`) del anillo al marco del quemador
+2. **Parche de cincha** (`Rigging_TapePatch_*`) cosido a la tela con pespunte en
+   **caja con cruz** — el patrón estándar para cinchas que cargan peso
+3. **Cincha** (`Rigging_TapeStrap_*`) que baja 26 cm de la boca
+4. **Anillo de acero** (`Rigging_Ring_*`) en su extremo
+5. **Cable** (`Rigging_Cable_*`) del anillo al marco del quemador
 
 Son **20 cables, uno por gajo**, alineados con las costuras. Si cambiás el número de
 gajos en la textura, hay que cambiar este número también o dejan de coincidir.
 
 ---
 
-## 6. Si vas a editar el .blend
+## 8. Si vas a editar el .blend
 
 Hay **dos capas de trabajo** sobre las texturas del globo y es fácil pisarlas:
 
@@ -170,18 +229,18 @@ hizo para ajustar el arrugado.
 
 | Objeto | Capas | Notas |
 |---|---|---|
-| `BalloonEnvelope` | `UVMap` | u = ángulo, v = **longitud de arco** (sin estiramiento en los polos) |
-| `BasketWalls` | `UVMap` (metros) + `UVBake` (0–1) | El patrón se genera en metros; la textura vive en `UVBake` |
-| `BasketTopRim`, `BasketBaseTrim` | `UVMap` (metros) + `UVNorm` (0–1) | Igual criterio |
-| `CornerGuard_*`, `UprightPad_*` | `UVMap` | Mapeadas dentro de la textura del borde |
-| `GasTank_*` | `UVMap` | Cilíndrica |
-| `Hose_*` | `UVMap` | Smart project (se armaron con bmesh, sin UV) |
+| `Envelope_Fabric` | `UVMap` | u = ángulo, v = **longitud de arco** (sin estiramiento en los polos) |
+| `Basket_Weave` | `UVMap` (metros) + `UVBake` (0–1) | El patrón se genera en metros; la textura vive en `UVBake` |
+| `Basket_RimTop`, `Basket_TrimBase` | `UVMap` (metros) + `UVNorm` (0–1) | Igual criterio |
+| `Basket_CornerGuard_*`, `Basket_UprightPad_*` | `UVMap` | Mapeadas dentro de la textura del borde |
+| `Tank_Body_*` | `UVMap` | Cilíndrica |
+| `Tank_Hose_*` | `UVMap` | Smart project (se armaron con bmesh, sin UV) |
 
 La capa marcada `active_render` es la que corresponde a la textura. No cambiarla.
 
 ---
 
-## 7. Trampas encontradas durante la construcción
+## 9. Trampas encontradas durante la construcción
 
 Anotadas porque son fáciles de repetir:
 
@@ -199,6 +258,15 @@ Anotadas porque son fáciles de repetir:
   calcular tangentes ahí — el exportador avisa con "Could not calculate tangents" y
   la malla sale **sin TANGENT**, así que su normal map se ve mal en Unity. Se
   resuelve con un modificador **Triangulate** en todo objeto que use normal map.
+
+- **Los objetos Curve rompen FBX y OBJ de formas distintas y silenciosas.** Los 20
+  cables y las 2 serpentinas del quemador eran curvas con bevel. El exportador FBX
+  las **omitió por completo** (`object_types` sin `'CURVE'`: salieron 139 de 161
+  objetos, sin un solo warning) y el de OBJ las escribió **dos veces**, una
+  trianguladas y otra con los quads originales. Solo el GLB estaba bien. Se
+  arreglaron convirtiéndolas a malla (`object.convert(target='MESH')`), que conserva
+  UV, material y padre. **Verificar siempre el conteo de objetos del archivo
+  exportado, no el de la escena.**
 
 - **Un normal map no se ve con luz ambiente uniforme.** Con un cielo parejo muy
   brillante, inclinar la normal casi no cambia la luz que recibe la superficie, así
@@ -228,3 +296,7 @@ Anotadas porque son fáciles de repetir:
 
 - **Una textura de valor constante es un desperdicio.** La rugosidad de la trenza
   era un gris plano ocupando 453 KB; va como escalar en el material.
+
+- **`path_mode='COPY'` al exportar duplica todo el set de texturas.** El OBJ dejó 25
+  PNG sueltos en la raíz y el FBX otros 25 en un `.fbm/` — 38 MB de copias idénticas
+  a `texturas/`. Con `'RELATIVE'` los dos apuntan a la carpeta que ya existe.

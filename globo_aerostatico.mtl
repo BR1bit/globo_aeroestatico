@@ -1,0 +1,204 @@
+# Blender 5.2.2 LTS MTL File: 'globo_aerostatico.blend'
+# www.blender.org
+
+newmtl M_Basket_Floor
+Ns 22.499992
+Ka 1.000000 1.000000 1.000000
+Kd 0.235000 0.165000 0.098000
+Ks 0.150000 0.150000 0.150000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl M_Basket_StepHole
+Ns 10.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.030000 0.025000 0.020000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl M_Basket_Wicker
+Ns 78.399986
+Ka 1.000000 1.000000 1.000000
+Ks 0.250000 0.250000 0.250000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd texturas/mimbre_basecolor.png
+map_Bump -bm 1.000000 texturas/mimbre_normal.png
+
+newmtl M_Envelope_Crown
+Ns 122.500015
+Ka 1.000000 1.000000 1.000000
+Kd 0.030000 0.170000 0.200000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl M_Envelope_Fabric
+Ns 115.599983
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd texturas/globo_basecolor.png
+map_Ke texturas/globo_basecolor.png
+map_Bump -bm 1.250000 texturas/globo_normal.png
+
+newmtl M_Flame
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl M_Hose_Braid
+Ns 144.399994
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd -s 6 6 1 texturas/manguera_trenza_color.png
+map_Bump -s 6 6 1 -bm 1.000000 texturas/manguera_trenza_normal.png
+
+newmtl M_Leather_CornerGuard
+Ns 57.600006
+Ka 1.000000 1.000000 1.000000
+Ks 0.120000 0.120000 0.120000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd texturas/borde_basecolor.png
+map_Bump -bm 1.000000 texturas/borde_normal.png
+
+newmtl M_Leather_Plain
+Ns 48.400013
+Ka 1.000000 1.000000 1.000000
+Kd 0.115000 0.066000 0.043000
+Ks 0.120000 0.120000 0.120000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl M_Leather_RimBase
+Ns 57.600006
+Ka 1.000000 1.000000 1.000000
+Ks 0.120000 0.120000 0.120000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd texturas/zocalo_basecolor.png
+map_Bump -bm 1.000000 texturas/zocalo_normal.png
+
+newmtl M_Leather_RimTop
+Ns 67.599998
+Ka 1.000000 1.000000 1.000000
+Ks 0.120000 0.120000 0.120000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd texturas/borde_basecolor.png
+map_Bump -bm 1.000000 texturas/borde_normal.png
+
+newmtl M_Leather_UprightPad
+Ns 67.599998
+Ka 1.000000 1.000000 1.000000
+Ks 0.120000 0.120000 0.120000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd texturas/borde_basecolor.png
+map_Bump -bm 1.000000 texturas/borde_normal.png
+
+newmtl M_Metal_Aluminium
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd texturas/tanque_basecolor.png
+map_Ns texturas/tanque_roughness.png
+map_Bump -bm 1.000000 texturas/tanque_normal.png
+
+newmtl M_Metal_Brass
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd -s 2.5 2.5 1 texturas/metal_laton_color.png
+map_Ns -s 2.5 2.5 1 texturas/metal_laton_rough.png
+map_Bump -s 2.5 2.5 1 -bm 1.000000 texturas/metal_laton_normal.png
+
+newmtl M_Metal_HeatTempered
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd -s 2 2 1 texturas/metal_calor_color.png
+map_Ns -s 2 2 1 texturas/metal_calor_rough.png
+map_Bump -s 2 2 1 -bm 1.000000 texturas/metal_calor_normal.png
+
+newmtl M_Metal_Stainless
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd -s 3 3 1 texturas/metal_inox_color.png
+map_Ns -s 3 3 1 texturas/metal_inox_rough.png
+map_Bump -s 3 3 1 -bm 1.000000 texturas/metal_inox_normal.png
+
+newmtl M_Rope
+Ns 90.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.080000 0.080000 0.080000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl M_Valve_Red
+Ns 302.500000
+Ka 1.000000 1.000000 1.000000
+Kd 0.450000 0.045000 0.035000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl M_Webbing_Strap
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd texturas/cincha_refuerzo_color.png
+map_Ns texturas/cincha_refuerzo_rough.png
+map_Bump -bm 1.000000 texturas/cincha_refuerzo_normal.png
