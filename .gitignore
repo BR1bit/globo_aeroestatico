@@ -9,3 +9,6 @@ proceso/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Paquete para las tiendas: se regenera, no va al repo
+globo_aerostatico_v1.zip

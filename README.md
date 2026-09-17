@@ -11,8 +11,9 @@ de la canasta. Construido procedimentalmente en Blender 5.2.
 |---|---|
 | Globo (envoltorio) | 18,00 m diámetro × 21,39 m alto |
 | Altura total del conjunto | 25,31 m |
-| Canasta exterior | 1,70 × 1,90 m |
-| Canasta interior libre | 1,59 × 1,79 m |
+| Canasta — tejido de mimbre | 1,75 × 1,95 m |
+| Canasta — borde de cuero (máximo) | 1,90 × 2,10 m |
+| **Piso pisable** | **1,60 × 1,79 m** |
 | Altura de pared sobre el piso | **1,082 m** (altura de pecho de un adulto) |
 | **Piso pisable** | **y = 0** |
 | Punto más bajo (patines) | y = −0,07 |
@@ -111,8 +112,13 @@ globo_aerostatico/
 ├── globo_aerostatico.mtl         (acompaña al .obj)
 ├── globo_aerostatico.blend    ← fuente editable
 ├── texturas/                  ← los 25 PNG sueltos (los usan el .fbx y el .obj)
+├── preview/                   ← imágenes de galería para las tiendas
 └── renders/                   ← 9 ángulos del modelo actual
 ```
+
+Las rutas de textura del `.blend` son **relativas** (`//texturas/...`), así que la
+carpeta tiene que viajar al lado. Si quedaran absolutas, al abrirlo en otra
+máquina faltarían las 26 imágenes.
 
 ### Texturas
 
