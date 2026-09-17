@@ -11,7 +11,7 @@ de la canasta. Construido procedimentalmente en Blender 5.2.
 |---|---|
 | Globo (envoltorio) | 18,00 m diámetro × 21,39 m alto |
 | Altura total del conjunto | 25,31 m |
-| Canasta — tejido de mimbre | 1,75 × 1,95 m |
+| Canasta — tejido de cuerda | 1,75 × 1,95 m |
 | Canasta — borde de cuero (máximo) | 1,90 × 2,10 m |
 | **Piso pisable** | **1,60 × 1,79 m** |
 | Altura de pared sobre el piso | **1,082 m** (altura de pecho de un adulto) |
@@ -24,7 +24,7 @@ de la canasta. Construido procedimentalmente en Blender 5.2.
 Capacidad real: 1 persona cómoda con los dos tanques, o 2–3 personas.
 
 **Presupuesto:** 161 objetos · **33.750 triángulos** · 34.086 vértices · 19 materiales
-· 31 texturas
+· 32 texturas
 
 Todo malla poligonal: **cero n-gons**, cero geometría oculta, cero objetos vacíos de
 relleno. El modelo está en el origen, con escala 1,0 aplicada y rotación en cero.
@@ -76,7 +76,7 @@ entra con su nombre real, no como `Cylinder.003`.
 Materiales, todos con prefijo `M_`:
 
 ```
-M_Envelope_Fabric      M_Envelope_Crown       M_Basket_Wicker      M_Basket_Floor
+M_Envelope_Fabric      M_Envelope_Crown       M_Basket_RopeWeave   M_Basket_Floor
 M_Basket_StepHole      M_Leather_RimTop       M_Leather_RimBase    M_Leather_CornerGuard
 M_Leather_UprightPad   M_Leather_Plain        M_Metal_Stainless    M_Metal_HeatTempered
 M_Metal_Brass          M_Metal_Aluminium      M_Hose_Braid         M_Webbing_Strap
@@ -111,7 +111,7 @@ globo_aerostatico/
 ├── globo_aerostatico.obj      ← intercambio genérico
 ├── globo_aerostatico.mtl         (acompaña al .obj)
 ├── globo_aerostatico.blend    ← fuente editable
-├── texturas/                  ← los 31 PNG sueltos (los usan el .fbx y el .obj)
+├── texturas/                  ← los 32 PNG sueltos (los usan el .fbx y el .obj)
 ├── preview/                   ← imágenes de galería para las tiendas
 └── renders/                   ← 9 ángulos del modelo actual
 ```
@@ -125,7 +125,7 @@ máquina faltarían las 26 imágenes.
 | Archivo | Resolución | Uso |
 |---|---|---|
 | `globo_basecolor` / `globo_normal` | 2048² | Tela del globo |
-| `mimbre_basecolor` / `mimbre_normal` | 2048² | Tejido de la canasta |
+| `cuerda_basecolor` / `_normal` / `_roughness` | 1024² | Tejido de cuerda de la canasta (mosaico, tile de 0,75 m) |
 | `piso_basecolor` / `_normal` / `_roughness` | 1024² | Piso de tablones de la canasta |
 | `borde_basecolor` / `borde_normal` | 4096×512 | Borde de cuero (tira) |
 | `cuero_basecolor` / `_normal` / `_roughness` | 1024² | Cuero en mosaico: montantes, cinchas y bandas |
@@ -139,8 +139,8 @@ máquina faltarían las 26 imágenes.
 | `manguera_trenza_color` / `_normal` | 512² | Trenza negra de las mangueras |
 | `cincha_refuerzo_*` | 256×512 | Parche y cincha de anclaje de los cables |
 
-`piso_basecolor` y `cuero_basecolor` son imágenes **generadas con IA** provistas por
-el autor; sus normal y roughness se derivan de ellas, igual que el cuero de las tiras
+`piso_basecolor`, `cuero_basecolor` y `cuerda_basecolor` son imágenes **generadas con
+IA** provistas por el autor; sus normal y roughness se derivan de ellas, igual que el cuero de las tiras
 `borde_*` y `zocalo_*`, que conservan su costura original. El original queda en `fuentes/`, fuera
 del paquete que se distribuye. El resto de las texturas son procedurales.
 
@@ -243,7 +243,7 @@ hizo para ajustar el arrugado.
 | Objeto | Capas | Notas |
 |---|---|---|
 | `Envelope_Fabric` | `UVMap` | u = ángulo, v = **longitud de arco** (sin estiramiento en los polos) |
-| `Basket_Weave` | `UVMap` (metros) + `UVBake` (0–1) | El patrón se genera en metros; la textura vive en `UVBake` |
+| `Basket_Weave` | `UVMap` (metros) | El tejido se repite por metro real: un nodo Mapping con escala 1/0,75 |
 | `Basket_RimTop`, `Basket_TrimBase` | `UVMap` (metros) + `UVNorm` (0–1) | Igual criterio |
 | `Basket_CornerGuard_*`, `Basket_UprightPad_*` | `UVMap` | Mapeadas dentro de la textura del borde |
 | `Basket_Floor` | `UVMap` | Proyección planar XY, 1:1 con el contorno del piso |
