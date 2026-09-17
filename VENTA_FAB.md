@@ -62,11 +62,11 @@ Comfortable for one person with both tanks aboard, or two to three people.
 
 ## Technical
 
-- **161 objects · 33,694 triangles · 33,998 vertices · 19 materials**
+- **161 objects · 33,694 triangles · 33,998 vertices · 20 materials**
 - Zero n-gons, zero hidden geometry, scale applied, rotation zeroed
 - Single root node with five named groups: Envelope, Rigging, Burner, Basket, Tanks
 - Every object and its mesh share the same descriptive name — no `Cylinder.003`
-- PBR metallic-roughness, 33 PNG maps (2048² down to 512² on the tileables)
+- PBR metallic-roughness, 36 PNG maps (2048² down to 512² on the tileables)
 - Y-up, metres, in all formats
 
 ## Formats
@@ -112,7 +112,7 @@ sin offset, y la pared de 1,08 m queda a la altura del pecho de un adulto.
 Medidas: globo de 18,00 m de diámetro por 21,39 m de alto, 25,31 m de altura
 total, piso pisable de 1,60 × 1,79 m, tanques de 31 cm × 62 cm.
 
-161 objetos · 33.694 triángulos · 33.998 vértices · 19 materiales · 33 texturas
+161 objetos · 33.694 triángulos · 33.998 vértices · 20 materiales · 36 texturas
 PBR. Cero n-gons, escala aplicada, jerarquía con un único nodo raíz y cinco
 grupos nombrados. Se entrega en GLB, FBX, OBJ y BLEND, con un README con la
 checklist de importación a Unity.
@@ -151,7 +151,8 @@ alguien entra al listado.
 | 8 | `07_tela.png` | Gajos, costuras y arrugas de la tela |
 | 9 | `11_wireframe.png` | Topología |
 | 10 | `10_texturas.png` | Los mapas incluidos |
-| 11 | `02_perfil.png` | Perfil completo |
+| 11 | `12_garrafas.png` | Garrafas en detalle |
+| 12 | `02_perfil.png` | Perfil completo |
 
 Todas en 1920×1080 salvo `09_medidas.png`, que es 1920×1440.
 
@@ -161,7 +162,8 @@ Todas en 1920×1080 salvo `09_medidas.png`, que es 1920×1440.
 
 - **[tuyo]** Declaración de contenido generado con IA. Fab la pide en el formulario:
   las texturas base del piso y del cuero (`piso_basecolor`, `cuero_basecolor`,
-  `cuerda_basecolor`, `flama_color` y las tiras `borde_*` / `zocalo_*`) se generaron con IA. El resto es procedural.
+  `cuerda_basecolor`, `flama_color`, la hoja de las garrafas y las tiras
+  `borde_*` / `zocalo_*`) se generaron con IA. El resto es procedural.
 - **[tuyo]** Cuenta de vendedor de Fab (cuenta Epic + contrato de distribución)
 - **[tuyo]** Formulario fiscal — si estás en Uruguay es el W-8BEN
 - **[tuyo]** Datos de cobro

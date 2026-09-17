@@ -23,8 +23,8 @@ de la canasta. Construido procedimentalmente en Blender 5.2.
 
 Capacidad real: 1 persona cómoda con los dos tanques, o 2–3 personas.
 
-**Presupuesto:** 161 objetos · **33.694 triángulos** · 33.998 vértices · 19 materiales
-· 33 texturas
+**Presupuesto:** 161 objetos · **33.694 triángulos** · 33.998 vértices · 20 materiales
+· 36 texturas
 
 Todo malla poligonal: **cero n-gons**, cero geometría oculta, cero objetos vacíos de
 relleno. El modelo está en el origen, con escala 1,0 aplicada y rotación en cero.
@@ -79,7 +79,8 @@ Materiales, todos con prefijo `M_`:
 M_Envelope_Fabric      M_Envelope_Crown       M_Basket_RopeWeave   M_Basket_Floor
 M_Basket_StepHole      M_Leather_RimTop       M_Leather_RimBase    M_Leather_CornerGuard
 M_Leather_UprightPad   M_Leather_Plain        M_Metal_Stainless    M_Metal_HeatTempered
-M_Metal_Brass          M_Metal_Aluminium      M_Hose_Braid         M_Webbing_Strap
+M_Metal_Brass          M_Metal_Aluminium      M_Metal_Worn         M_Hose_Braid
+M_Webbing_Strap
 M_Rope                 M_Valve_Red            M_Flame
 ```
 
@@ -111,7 +112,7 @@ globo_aerostatico/
 ├── globo_aerostatico.obj      ← intercambio genérico
 ├── globo_aerostatico.mtl         (acompaña al .obj)
 ├── globo_aerostatico.blend    ← fuente editable
-├── texturas/                  ← los 33 PNG sueltos (los usan el .fbx y el .obj)
+├── texturas/                  ← los 36 PNG sueltos (los usan el .fbx y el .obj)
 ├── preview/                   ← imágenes de galería para las tiendas
 └── renders/                   ← 9 ángulos del modelo actual
 ```
@@ -130,7 +131,8 @@ máquina faltarían las 26 imágenes.
 | `borde_basecolor` / `borde_normal` | 4096×512 | Borde de cuero (tira) |
 | `cuero_basecolor` / `_normal` / `_roughness` | 1024² | Cuero en mosaico: montantes, cinchas y bandas |
 | `zocalo_basecolor` / `zocalo_normal` | 2048×256 | Zócalo de cuero (tira) |
-| `tanque_basecolor` / `_roughness` / `_normal` | 1024² | Aluminio cepillado |
+| `tanque_basecolor` / `_roughness` / `_normal` | 1024² | Cuerpo de la garrafa: metal cepillado + banda de goma |
+| `metal_gastado_color` / `_normal` / `_rough` | 512² | Metal gastado: base y aro de las garrafas |
 | `tela_ripstop_normal` / `_detail_albedo` | 1024² | **Trama de la tela — va aparte, ver 6.4** |
 | `tela_ripstop_height` | 1024² | Fuente del anterior (solo para Blender) |
 | `metal_inox_*` | 512² | Acero cepillado: marco, aro, grilletes |
@@ -140,8 +142,8 @@ máquina faltarían las 26 imágenes.
 | `flama_color` | 1024×1536 | Llama del quemador, con canal alfa |
 | `cincha_refuerzo_*` | 256×512 | Parche y cincha de anclaje de los cables |
 
-`piso_basecolor`, `cuero_basecolor` y `cuerda_basecolor` son imágenes **generadas con
-IA** provistas por el autor; sus normal y roughness se derivan de ellas, igual que el cuero de las tiras
+`piso_basecolor`, `cuero_basecolor` y `cuerda_basecolor`, `flama_color` y la hoja de las
+garrafas son imágenes **generadas con IA** provistas por el autor; sus normal y roughness se derivan de ellas, igual que el cuero de las tiras
 `borde_*` y `zocalo_*`, que conservan su costura original. El original queda en `fuentes/`, fuera
 del paquete que se distribuye. El resto de las texturas son procedurales.
 

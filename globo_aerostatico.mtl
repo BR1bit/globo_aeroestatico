@@ -174,6 +174,17 @@ map_Kd -s 3 3 1 texturas/metal_inox_color.png
 map_Ns -s 3 3 1 texturas/metal_inox_rough.png
 map_Bump -s 3 3 1 -bm 1.000000 texturas/metal_inox_normal.png
 
+newmtl M_Metal_Worn
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd -s 3 3 1 texturas/metal_gastado_color.png
+map_Ns -s 3 3 1 texturas/metal_gastado_rough.png
+map_Bump -s 3 3 1 -bm 1.000000 texturas/metal_gastado_normal.png
+
 newmtl M_Rope
 Ns 90.000000
 Ka 1.000000 1.000000 1.000000
