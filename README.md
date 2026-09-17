@@ -138,6 +138,10 @@ máquina faltarían las 26 imágenes.
 | `manguera_trenza_color` / `_normal` | 512² | Trenza negra de las mangueras |
 | `cincha_refuerzo_*` | 256×512 | Parche y cincha de anclaje de los cables |
 
+`piso_basecolor` es una imagen **generada con IA** provista por el autor; el normal
+y el roughness del piso se derivan de ella. El original queda en `fuentes/`, fuera
+del paquete que se distribuye. El resto de las texturas son procedurales.
+
 Las de cuero son **tiras, no cuadradas**: el borde mide 6,7 × 0,5 m, una textura
 cuadrada desperdiciaría la mayor parte del espacio.
 

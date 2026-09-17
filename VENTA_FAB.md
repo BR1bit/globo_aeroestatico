@@ -158,6 +158,9 @@ Todas en 1920×1080 salvo `09_medidas.png`, que es 1920×1440.
 
 ## 7. Campos que completás vos
 
+- **[tuyo]** Declaración de contenido generado con IA. Fab la pide en el formulario:
+  la textura base del piso (`piso_basecolor`) se generó con IA. El resto del modelo
+  y de las texturas es procedural.
 - **[tuyo]** Cuenta de vendedor de Fab (cuenta Epic + contrato de distribución)
 - **[tuyo]** Formulario fiscal — si estás en Uruguay es el W-8BEN
 - **[tuyo]** Datos de cobro
