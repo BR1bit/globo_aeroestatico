@@ -66,7 +66,7 @@ Comfortable for one person with both tanks aboard, or two to three people.
 - Zero n-gons, zero hidden geometry, scale applied, rotation zeroed
 - Single root node with five named groups: Envelope, Rigging, Burner, Basket, Tanks
 - Every object and its mesh share the same descriptive name — no `Cylinder.003`
-- PBR metallic-roughness, 28 PNG maps (2048² down to 512² on the tileables)
+- PBR metallic-roughness, 31 PNG maps (2048² down to 512² on the tileables)
 - Y-up, metres, in all formats
 
 ## Formats
@@ -111,7 +111,7 @@ sin offset, y la pared de 1,08 m queda a la altura del pecho de un adulto.
 Medidas: globo de 18,00 m de diámetro por 21,39 m de alto, 25,31 m de altura
 total, piso pisable de 1,60 × 1,79 m, tanques de 31 cm × 62 cm.
 
-161 objetos · 33.750 triángulos · 34.086 vértices · 19 materiales · 28 texturas
+161 objetos · 33.750 triángulos · 34.086 vértices · 19 materiales · 31 texturas
 PBR. Cero n-gons, escala aplicada, jerarquía con un único nodo raíz y cinco
 grupos nombrados. Se entrega en GLB, FBX, OBJ y BLEND, con un README con la
 checklist de importación a Unity.
@@ -159,8 +159,8 @@ Todas en 1920×1080 salvo `09_medidas.png`, que es 1920×1440.
 ## 7. Campos que completás vos
 
 - **[tuyo]** Declaración de contenido generado con IA. Fab la pide en el formulario:
-  la textura base del piso (`piso_basecolor`) se generó con IA. El resto del modelo
-  y de las texturas es procedural.
+  las texturas base del piso y del cuero (`piso_basecolor`, `cuero_basecolor` y las
+  tiras `borde_*` / `zocalo_*`) se generaron con IA. El resto es procedural.
 - **[tuyo]** Cuenta de vendedor de Fab (cuenta Epic + contrato de distribución)
 - **[tuyo]** Formulario fiscal — si estás en Uruguay es el W-8BEN
 - **[tuyo]** Datos de cobro

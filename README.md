@@ -24,7 +24,7 @@ de la canasta. Construido procedimentalmente en Blender 5.2.
 Capacidad real: 1 persona cómoda con los dos tanques, o 2–3 personas.
 
 **Presupuesto:** 161 objetos · **33.750 triángulos** · 34.086 vértices · 19 materiales
-· 28 texturas
+· 31 texturas
 
 Todo malla poligonal: **cero n-gons**, cero geometría oculta, cero objetos vacíos de
 relleno. El modelo está en el origen, con escala 1,0 aplicada y rotación en cero.
@@ -111,7 +111,7 @@ globo_aerostatico/
 ├── globo_aerostatico.obj      ← intercambio genérico
 ├── globo_aerostatico.mtl         (acompaña al .obj)
 ├── globo_aerostatico.blend    ← fuente editable
-├── texturas/                  ← los 28 PNG sueltos (los usan el .fbx y el .obj)
+├── texturas/                  ← los 31 PNG sueltos (los usan el .fbx y el .obj)
 ├── preview/                   ← imágenes de galería para las tiendas
 └── renders/                   ← 9 ángulos del modelo actual
 ```
@@ -128,6 +128,7 @@ máquina faltarían las 26 imágenes.
 | `mimbre_basecolor` / `mimbre_normal` | 2048² | Tejido de la canasta |
 | `piso_basecolor` / `_normal` / `_roughness` | 1024² | Piso de tablones de la canasta |
 | `borde_basecolor` / `borde_normal` | 4096×512 | Borde de cuero (tira) |
+| `cuero_basecolor` / `_normal` / `_roughness` | 1024² | Cuero en mosaico: montantes, cinchas y bandas |
 | `zocalo_basecolor` / `zocalo_normal` | 2048×256 | Zócalo de cuero (tira) |
 | `tanque_basecolor` / `_roughness` / `_normal` | 1024² | Aluminio cepillado |
 | `tela_ripstop_normal` / `_detail_albedo` | 1024² | **Trama de la tela — va aparte, ver 6.4** |
@@ -138,8 +139,9 @@ máquina faltarían las 26 imágenes.
 | `manguera_trenza_color` / `_normal` | 512² | Trenza negra de las mangueras |
 | `cincha_refuerzo_*` | 256×512 | Parche y cincha de anclaje de los cables |
 
-`piso_basecolor` es una imagen **generada con IA** provista por el autor; el normal
-y el roughness del piso se derivan de ella. El original queda en `fuentes/`, fuera
+`piso_basecolor` y `cuero_basecolor` son imágenes **generadas con IA** provistas por
+el autor; sus normal y roughness se derivan de ellas, igual que el cuero de las tiras
+`borde_*` y `zocalo_*`, que conservan su costura original. El original queda en `fuentes/`, fuera
 del paquete que se distribuye. El resto de las texturas son procedurales.
 
 Las de cuero son **tiras, no cuadradas**: el borde mide 6,7 × 0,5 m, una textura
