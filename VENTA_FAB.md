@@ -22,7 +22,7 @@ Hot Air Balloon with Detailed Basket, Burner and Gas Tanks — Real Scale
 
 ```
 Photorealistic hot air balloon at true 1:1 scale, built for VR. Enterable basket,
-detailed burner and gas tanks. 33,750 tris, PBR, GLB/FBX/OBJ/BLEND.
+detailed burner and gas tanks. 33,694 tris, PBR, GLB/FBX/OBJ/BLEND.
 ```
 
 ---
@@ -62,11 +62,11 @@ Comfortable for one person with both tanks aboard, or two to three people.
 
 ## Technical
 
-- **161 objects · 33,750 triangles · 34,086 vertices · 19 materials**
+- **161 objects · 33,694 triangles · 33,998 vertices · 19 materials**
 - Zero n-gons, zero hidden geometry, scale applied, rotation zeroed
 - Single root node with five named groups: Envelope, Rigging, Burner, Basket, Tanks
 - Every object and its mesh share the same descriptive name — no `Cylinder.003`
-- PBR metallic-roughness, 32 PNG maps (2048² down to 512² on the tileables)
+- PBR metallic-roughness, 33 PNG maps (2048² down to 512² on the tileables)
 - Y-up, metres, in all formats
 
 ## Formats
@@ -92,7 +92,8 @@ structure as shipped.
   the envelope texture. glTF allows one normal map per material, and the weave
   needs hundreds of repeats. Apply `tela_ripstop_normal` and
   `tela_ripstop_detail_albedo` in the Detail Inputs at a tiling of **226 x 110**.
-- The flame is a simple emissive mesh meant to be read with Bloom on.
+- The flame is two crossed alpha-blended cards with an emissive texture. Turn Bloom
+  on to get the most out of it.
 
 A full README with a step-by-step Unity import checklist is included.
 ```
@@ -111,7 +112,7 @@ sin offset, y la pared de 1,08 m queda a la altura del pecho de un adulto.
 Medidas: globo de 18,00 m de diámetro por 21,39 m de alto, 25,31 m de altura
 total, piso pisable de 1,60 × 1,79 m, tanques de 31 cm × 62 cm.
 
-161 objetos · 33.750 triángulos · 34.086 vértices · 19 materiales · 32 texturas
+161 objetos · 33.694 triángulos · 33.998 vértices · 19 materiales · 33 texturas
 PBR. Cero n-gons, escala aplicada, jerarquía con un único nodo raíz y cinco
 grupos nombrados. Se entrega en GLB, FBX, OBJ y BLEND, con un README con la
 checklist de importación a Unity.
@@ -160,7 +161,7 @@ Todas en 1920×1080 salvo `09_medidas.png`, que es 1920×1440.
 
 - **[tuyo]** Declaración de contenido generado con IA. Fab la pide en el formulario:
   las texturas base del piso y del cuero (`piso_basecolor`, `cuero_basecolor`,
-  `cuerda_basecolor` y las tiras `borde_*` / `zocalo_*`) se generaron con IA. El resto es procedural.
+  `cuerda_basecolor`, `flama_color` y las tiras `borde_*` / `zocalo_*`) se generaron con IA. El resto es procedural.
 - **[tuyo]** Cuenta de vendedor de Fab (cuenta Epic + contrato de distribución)
 - **[tuyo]** Formulario fiscal — si estás en Uruguay es el W-8BEN
 - **[tuyo]** Datos de cobro

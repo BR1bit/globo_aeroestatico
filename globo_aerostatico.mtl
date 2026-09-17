@@ -55,14 +55,14 @@ map_Ke texturas/globo_basecolor.png
 map_Bump -bm 1.250000 texturas/globo_normal.png
 
 newmtl M_Flame
-Ns 360.000000
+Ns 0.000000
 Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 1.000000
-illum 2
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd texturas/flama_color.png
+map_Ke texturas/flama_color.png
+map_d texturas/flama_color.png
 
 newmtl M_Hose_Braid
 Ns 144.399994

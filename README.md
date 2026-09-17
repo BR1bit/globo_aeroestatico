@@ -23,8 +23,8 @@ de la canasta. Construido procedimentalmente en Blender 5.2.
 
 Capacidad real: 1 persona cómoda con los dos tanques, o 2–3 personas.
 
-**Presupuesto:** 161 objetos · **33.750 triángulos** · 34.086 vértices · 19 materiales
-· 32 texturas
+**Presupuesto:** 161 objetos · **33.694 triángulos** · 33.998 vértices · 19 materiales
+· 33 texturas
 
 Todo malla poligonal: **cero n-gons**, cero geometría oculta, cero objetos vacíos de
 relleno. El modelo está en el origen, con escala 1,0 aplicada y rotación en cero.
@@ -41,7 +41,7 @@ relleno. El modelo está en el origen, con escala 1,0 aplicada y rotación en ce
 | `globo_aerostatico.blend` | 440 KB | Fuente editable (Blender 5.2), con los materiales nodales completos |
 
 Los tres exports salen de la misma escena y coinciden objeto por objeto: 161 mallas,
-33.750 triángulos. FBX y OBJ **no duplican** las texturas — las referencian en
+33.694 triángulos. FBX y OBJ **no duplican** las texturas — las referencian en
 `texturas/`, así que esa carpeta tiene que viajar al lado del modelo.
 
 Orientación: **Y arriba, −Z al frente**, unidades en metros, en los tres formatos.
@@ -111,7 +111,7 @@ globo_aerostatico/
 ├── globo_aerostatico.obj      ← intercambio genérico
 ├── globo_aerostatico.mtl         (acompaña al .obj)
 ├── globo_aerostatico.blend    ← fuente editable
-├── texturas/                  ← los 32 PNG sueltos (los usan el .fbx y el .obj)
+├── texturas/                  ← los 33 PNG sueltos (los usan el .fbx y el .obj)
 ├── preview/                   ← imágenes de galería para las tiendas
 └── renders/                   ← 9 ángulos del modelo actual
 ```
@@ -137,6 +137,7 @@ máquina faltarían las 26 imágenes.
 | `metal_calor_*` | 512² | Revenido: serpentinas y picos del quemador |
 | `metal_laton_*` | 512² | Latón: válvulas, salidas, racores |
 | `manguera_trenza_color` / `_normal` | 512² | Trenza negra de las mangueras |
+| `flama_color` | 1024×1536 | Llama del quemador, con canal alfa |
 | `cincha_refuerzo_*` | 256×512 | Parche y cincha de anclaje de los cables |
 
 `piso_basecolor`, `cuero_basecolor` y `cuerda_basecolor` son imágenes **generadas con
@@ -167,8 +168,8 @@ globo**. El GLB ya trae `doubleSided: true`, pero conviene confirmarlo en Unity.
 - **Tela del globo**: emisivo al 22% del color del panel. Es lo que hace que los
   paneles se vean luminosos desde adentro, como en un globo real (el sol atraviesa
   el nylon). Desde afuera a pleno sol es imperceptible.
-- **Llama**: usa `KHR_materials_emissive_strength` con valor 26. Con Bloom activado
-  queda bien; sin Bloom se ve plana.
+- **Llama**: dos planos cruzados con una textura con alfa, `alphaMode: BLEND` y
+  `KHR_materials_emissive_strength` en 9. Con Bloom activado gana bastante.
 
 ### 6.3 Color space
 
