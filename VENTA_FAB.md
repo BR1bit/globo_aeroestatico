@@ -54,8 +54,9 @@ Comfortable for one person with both tanks aboard, or two to three people.
 - **Rigging** — 20 complete load chains: webbing patch stitched to the fabric with
   a box-and-cross pattern, webbing tab, steel ring and load cable
 - **Burner** — twin heat-tempered coils, nozzles, gimbal frame and four shackles
-- **Basket** — woven wicker, leather rim and base trim, corner guards, four
-  leather-padded uprights, skid runners with straps, reinforced step holes
+- **Basket** — woven wicker, plank floor, leather rim and base trim, corner
+  guards, four leather-padded uprights, skid runners with straps, reinforced
+  step holes
 - **Gas tanks** — two brushed aluminium cylinders with brass valves, handwheels,
   retaining straps and braided hoses running to the burner
 
@@ -65,7 +66,7 @@ Comfortable for one person with both tanks aboard, or two to three people.
 - Zero n-gons, zero hidden geometry, scale applied, rotation zeroed
 - Single root node with five named groups: Envelope, Rigging, Burner, Basket, Tanks
 - Every object and its mesh share the same descriptive name — no `Cylinder.003`
-- PBR metallic-roughness, 25 PNG maps (2048² down to 512² on the tileables)
+- PBR metallic-roughness, 28 PNG maps (2048² down to 512² on the tileables)
 - Y-up, metres, in all formats
 
 ## Formats
@@ -92,8 +93,6 @@ structure as shipped.
   needs hundreds of repeats. Apply `tela_ripstop_normal` and
   `tela_ripstop_detail_albedo` in the Detail Inputs at a tiling of **226 x 110**.
 - The flame is a simple emissive mesh meant to be read with Bloom on.
-- The basket floor is a plain material — it is meant to be covered by whatever
-  floor treatment your scene uses.
 
 A full README with a step-by-step Unity import checklist is included.
 ```
@@ -112,7 +111,7 @@ sin offset, y la pared de 1,08 m queda a la altura del pecho de un adulto.
 Medidas: globo de 18,00 m de diámetro por 21,39 m de alto, 25,31 m de altura
 total, piso pisable de 1,60 × 1,79 m, tanques de 31 cm × 62 cm.
 
-161 objetos · 33.750 triángulos · 34.086 vértices · 19 materiales · 25 texturas
+161 objetos · 33.750 triángulos · 34.086 vértices · 19 materiales · 28 texturas
 PBR. Cero n-gons, escala aplicada, jerarquía con un único nodo raíz y cinco
 grupos nombrados. Se entrega en GLB, FBX, OBJ y BLEND, con un README con la
 checklist de importación a Unity.

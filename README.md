@@ -24,7 +24,7 @@ de la canasta. Construido procedimentalmente en Blender 5.2.
 Capacidad real: 1 persona cómoda con los dos tanques, o 2–3 personas.
 
 **Presupuesto:** 161 objetos · **33.750 triángulos** · 34.086 vértices · 19 materiales
-· 25 texturas (19,2 MB)
+· 28 texturas
 
 Todo malla poligonal: **cero n-gons**, cero geometría oculta, cero objetos vacíos de
 relleno. El modelo está en el origen, con escala 1,0 aplicada y rotación en cero.
@@ -111,7 +111,7 @@ globo_aerostatico/
 ├── globo_aerostatico.obj      ← intercambio genérico
 ├── globo_aerostatico.mtl         (acompaña al .obj)
 ├── globo_aerostatico.blend    ← fuente editable
-├── texturas/                  ← los 25 PNG sueltos (los usan el .fbx y el .obj)
+├── texturas/                  ← los 28 PNG sueltos (los usan el .fbx y el .obj)
 ├── preview/                   ← imágenes de galería para las tiendas
 └── renders/                   ← 9 ángulos del modelo actual
 ```
@@ -126,6 +126,7 @@ máquina faltarían las 26 imágenes.
 |---|---|---|
 | `globo_basecolor` / `globo_normal` | 2048² | Tela del globo |
 | `mimbre_basecolor` / `mimbre_normal` | 2048² | Tejido de la canasta |
+| `piso_basecolor` / `_normal` / `_roughness` | 1024² | Piso de tablones de la canasta |
 | `borde_basecolor` / `borde_normal` | 4096×512 | Borde de cuero (tira) |
 | `zocalo_basecolor` / `zocalo_normal` | 2048×256 | Zócalo de cuero (tira) |
 | `tanque_basecolor` / `_roughness` / `_normal` | 1024² | Aluminio cepillado |
@@ -239,6 +240,8 @@ hizo para ajustar el arrugado.
 | `Basket_Weave` | `UVMap` (metros) + `UVBake` (0–1) | El patrón se genera en metros; la textura vive en `UVBake` |
 | `Basket_RimTop`, `Basket_TrimBase` | `UVMap` (metros) + `UVNorm` (0–1) | Igual criterio |
 | `Basket_CornerGuard_*`, `Basket_UprightPad_*` | `UVMap` | Mapeadas dentro de la textura del borde |
+| `Basket_Floor` | `UVMap` | Proyección planar XY, 1:1 con el contorno del piso |
+| `Basket_Runner_*` | `UVMap` | Proyección de caja, misma densidad que el piso |
 | `Tank_Body_*` | `UVMap` | Cilíndrica |
 | `Tank_Hose_*` | `UVMap` | Smart project (se armaron con bmesh, sin UV) |
 
