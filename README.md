@@ -165,6 +165,14 @@ genérica rinde mucho más que hacerle un atlas a cada tubo.
 Si queda en `Front`, **desde adentro de la canasta vas a ver el cielo a través del
 globo**. El GLB ya trae `doubleSided: true`, pero conviene confirmarlo en Unity.
 
+**Solo 8 de los 20 materiales son doble cara**, y es a propósito: el envoltorio y la
+válvula de corona porque se ven desde adentro, la llama porque son planos cruzados, y
+cinco más porque sus mallas son abiertas (cables, serpentinas, mangueras, forros de
+montante y parches de cincha). Los otros 12 llevan backface culling, que en Quest 3
+saca de la cuenta el **53% de los triángulos**. Antes de activarlo se verificó que
+ninguna malla tuviera normales invertidas: culleando una malla dada vuelta aparecen
+agujeros.
+
 ### 6.2 Emisivo activado
 
 - **Tela del globo**: emisivo al 22% del color del panel. Es lo que hace que los

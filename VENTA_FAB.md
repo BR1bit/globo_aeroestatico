@@ -64,6 +64,9 @@ Comfortable for one person with both tanks aboard, or two to three people.
 
 - **161 objects · 33,694 triangles · 33,998 vertices · 20 materials**
 - Zero n-gons, zero hidden geometry, scale applied, rotation zeroed
+- Backface culling on 12 of the 20 materials; the 8 that stay double-sided need
+  it (the envelope is seen from inside, the flame is crossed cards, the rest are
+  open meshes)
 - Single root node with five named groups: Envelope, Rigging, Burner, Basket, Tanks
 - Every object and its mesh share the same descriptive name — no `Cylinder.003`
 - PBR metallic-roughness, 36 PNG maps (2048² down to 512² on the tileables)
