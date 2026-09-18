@@ -22,7 +22,7 @@ Hot Air Balloon with Detailed Basket, Burner and Gas Tanks — Real Scale
 
 ```
 Photorealistic hot air balloon at true 1:1 scale, built for VR. Enterable basket,
-detailed burner and gas tanks. 33,694 tris, PBR, GLB/FBX/OBJ/BLEND.
+detailed burner and gas tanks. 43,990 tris, PBR, GLB/FBX/OBJ/BLEND.
 ```
 
 ---
@@ -53,7 +53,9 @@ Comfortable for one person with both tanks aboard, or two to three people.
 - **Envelope** — 20-gore teardrop with load tapes, a crown ring and a crown vent
 - **Rigging** — 20 complete load chains: webbing patch stitched to the fabric with
   a box-and-cross pattern, webbing tab, steel ring and load cable
-- **Burner** — twin heat-tempered coils, nozzles, gimbal frame and four shackles
+- **Burner** — twin heat-tempered helical coils, slotted guard cages, jets, brass
+  blast valves with red levers, crossover pipe with pressure gauge, standing pilot
+  light, tubular gimbal frame and four shackles
 - **Basket** — woven rope, plank floor, leather rim and base trim, corner
   guards, four leather-padded uprights, skid runners with straps, reinforced
   step holes
@@ -62,7 +64,7 @@ Comfortable for one person with both tanks aboard, or two to three people.
 
 ## Technical
 
-- **161 objects · 33,694 triangles · 33,998 vertices · 20 materials**
+- **172 objects · 43,990 triangles · 41,811 vertices · 20 materials**
 - Zero n-gons, zero hidden geometry, scale applied, rotation zeroed
 - Backface culling on 12 of the 20 materials; the 8 that stay double-sided need
   it (the envelope is seen from inside, the flame is crossed cards, the rest are
@@ -115,7 +117,7 @@ sin offset, y la pared de 1,08 m queda a la altura del pecho de un adulto.
 Medidas: globo de 18,00 m de diámetro por 21,39 m de alto, 25,31 m de altura
 total, piso pisable de 1,60 × 1,79 m, tanques de 31 cm × 62 cm.
 
-161 objetos · 33.694 triángulos · 33.998 vértices · 20 materiales · 36 texturas
+172 objetos · 43.990 triángulos · 41.811 vértices · 20 materiales · 36 texturas
 PBR. Cero n-gons, escala aplicada, jerarquía con un único nodo raíz y cinco
 grupos nombrados. Se entrega en GLB, FBX, OBJ y BLEND, con un README con la
 checklist de importación a Unity.
@@ -155,7 +157,8 @@ alguien entra al listado.
 | 9 | `11_wireframe.png` | Topología |
 | 10 | `10_texturas.png` | Los mapas incluidos |
 | 11 | `12_garrafas.png` | Garrafas en detalle |
-| 12 | `02_perfil.png` | Perfil completo |
+| 12 | `13_quemador_vistas.png` | Quemador, cuatro vistas |
+| 13 | `02_perfil.png` | Perfil completo |
 
 Todas en 1920×1080 salvo `09_medidas.png`, que es 1920×1440.
 

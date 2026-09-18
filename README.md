@@ -23,7 +23,7 @@ de la canasta. Construido procedimentalmente en Blender 5.2.
 
 Capacidad real: 1 persona cómoda con los dos tanques, o 2–3 personas.
 
-**Presupuesto:** 161 objetos · **33.694 triángulos** · 33.998 vértices · 20 materiales
+**Presupuesto:** 172 objetos · **43.990 triángulos** · 41.811 vértices · 20 materiales
 · 36 texturas
 
 Todo malla poligonal: **cero n-gons**, cero geometría oculta, cero objetos vacíos de
@@ -41,7 +41,7 @@ relleno. El modelo está en el origen, con escala 1,0 aplicada y rotación en ce
 | `globo_aerostatico.blend` | 440 KB | Fuente editable (Blender 5.2), con los materiales nodales completos |
 
 Los tres exports salen de la misma escena y coinciden objeto por objeto: 161 mallas,
-33.694 triángulos. FBX y OBJ **no duplican** las texturas — las referencian en
+43.990 triángulos. FBX y OBJ **no duplican** las texturas — las referencian en
 `texturas/`, así que esa carpeta tiene que viajar al lado del modelo.
 
 Orientación: **Y arriba, −Z al frente**, unidades en metros, en los tres formatos.
@@ -57,9 +57,12 @@ HotAirBalloon_Root
 ├── GRP_Envelope   (3)   Envelope_Fabric, Envelope_CrownRing, Envelope_CrownValve
 ├── GRP_Rigging   (80)   Rigging_TapePatch_01..20, Rigging_TapeStrap_01..20,
 │                        Rigging_Ring_01..20, Rigging_Cable_01..20
-├── GRP_Burner    (16)   Burner_Coil_L/R, Burner_Nozzle_L/R, Burner_FrameSide_01..04,
-│                        Burner_FrameDiag_01..02, Burner_GimbalRing,
-│                        Burner_Shackle_01..04, Burner_Flame
+├── GRP_Burner    (27)   Burner_Coil_L/R, Burner_Shroud_L/R, Burner_Nozzle_L/R,
+│                        Burner_ValveBody_L/R, Burner_BlastLever_L/R,
+│                        Burner_Crossover, Burner_Gauge, Burner_PilotTube,
+│                        Burner_PilotShield, Burner_PilotFlame,
+│                        Burner_FrameSide_01..04, Burner_FrameDiag_01..02,
+│                        Burner_GimbalRing, Burner_Shackle_01..04, Burner_Flame
 ├── GRP_Basket    (40)   Basket_Weave, Basket_Floor, Basket_RimTop, Basket_TrimBase,
 │                        Basket_CornerGuard_01..04, Basket_Upright_01..04,
 │                        Basket_UprightPad_01..04, Basket_PadBand_01..08,
