@@ -64,7 +64,7 @@ Comfortable for one person with both tanks aboard, or two to three people.
 
 ## Technical
 
-- **172 objects · 43,990 triangles · 41,811 vertices · 20 materials**
+- **172 objects · 43,990 triangles · 41,817 vertices · 20 materials**
 - Zero n-gons, zero hidden geometry, scale applied, rotation zeroed
 - Backface culling on 12 of the 20 materials; the 8 that stay double-sided need
   it (the envelope is seen from inside, the flame is crossed cards, the rest are
@@ -117,7 +117,7 @@ sin offset, y la pared de 1,08 m queda a la altura del pecho de un adulto.
 Medidas: globo de 18,00 m de diámetro por 21,39 m de alto, 25,31 m de altura
 total, piso pisable de 1,60 × 1,79 m, tanques de 31 cm × 62 cm.
 
-172 objetos · 43.990 triángulos · 41.811 vértices · 20 materiales · 36 texturas
+172 objetos · 43.990 triángulos · 41.817 vértices · 20 materiales · 36 texturas
 PBR. Cero n-gons, escala aplicada, jerarquía con un único nodo raíz y cinco
 grupos nombrados. Se entrega en GLB, FBX, OBJ y BLEND, con un README con la
 checklist de importación a Unity.

@@ -3,8 +3,6 @@
 *.blend2
 *.blend@
 
-# Renders de las iteraciones: quedan en disco, no van al repo
-proceso/
 
 # Sistema
 .DS_Store

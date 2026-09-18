@@ -23,7 +23,7 @@ de la canasta. Construido procedimentalmente en Blender 5.2.
 
 Capacidad real: 1 persona cómoda con los dos tanques, o 2–3 personas.
 
-**Presupuesto:** 172 objetos · **43.990 triángulos** · 41.811 vértices · 20 materiales
+**Presupuesto:** 172 objetos · **43.990 triángulos** · 41.817 vértices · 20 materiales
 · 36 texturas
 
 Todo malla poligonal: **cero n-gons**, cero geometría oculta, cero objetos vacíos de
@@ -116,8 +116,7 @@ globo_aerostatico/
 ├── globo_aerostatico.mtl         (acompaña al .obj)
 ├── globo_aerostatico.blend    ← fuente editable
 ├── texturas/                  ← los 36 PNG sueltos (los usan el .fbx y el .obj)
-├── preview/                   ← imágenes de galería para las tiendas
-└── renders/                   ← 9 ángulos del modelo actual
+└── preview/                   ← imágenes de galería, todas del diseño actual
 ```
 
 Las rutas de textura del `.blend` son **relativas** (`//texturas/...`), así que la
